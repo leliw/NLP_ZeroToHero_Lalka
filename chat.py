@@ -38,7 +38,10 @@ model = tf.keras.models.load_model('saved_model/lalka')
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
-    st.session_state.messages.append({"role": "assistant", "content": "Ok. Jestem gotowy."})
+    st.session_state.messages.append({
+        "role": "assistant", 
+        "content": "Ok. Jestem gotowy. Napisz początek zdania np. 'Nagle', a ja dokończę." +
+        "Jestem trochę powolny, jak myślę, w prawym górnym rogu pokazuję 'RUNNING'."})
 
 
 # Display chat messages from history on app rerun
